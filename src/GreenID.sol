@@ -21,6 +21,7 @@ contract GreenID is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUp
         uint256 tokenId;
     }
 
+    /// @custom:oz-upgrades-unsafe-allow constructor
     constructor() {
         _disableInitializers();
     }
