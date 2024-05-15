@@ -37,7 +37,7 @@ contract GreenID is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUp
         _mint(to, tokenId);
     }
 
-    function mintBatch(MintParam[] calldata params) public onlyOwner {
+    function mintBatch(MintParam[] calldata params) public {
         for (uint256 i = 0; i < params.length; ) {
             mint(params[i].to, params[i].tokenId);
             unchecked {
@@ -75,7 +75,7 @@ contract GreenID is Initializable, ERC721Upgradeable, OwnableUpgradeable, UUPSUp
     {}
 
     function transferFrom(address from, address to, uint256 tokenId) public override  {
-        require(msg.sender == address(0), "GreenID: Soul Bound Token");
+        require(false, "GreenID: Soul Bound Token");
         super.transferFrom(from, to, tokenId);
     }
 
